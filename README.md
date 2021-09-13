@@ -1,40 +1,65 @@
-<img align="right" src="https://i.imgur.com/zrE80HY.png" height="200" width="200">
+# BopBot
 
-# JMusicBot
+BopBot is a customised [JMusicBot](https://github.com/jagrosh/MusicBot) instance for Adrian and friends.
 
-[![Downloads](https://img.shields.io/github/downloads/jagrosh/MusicBot/total.svg)](https://github.com/jagrosh/MusicBot/releases/latest)
-[![Stars](https://img.shields.io/github/stars/jagrosh/MusicBot.svg)](https://github.com/jagrosh/MusicBot/stargazers)
-[![Release](https://img.shields.io/github/release/jagrosh/MusicBot.svg)](https://github.com/jagrosh/MusicBot/releases/latest)
-[![License](https://img.shields.io/github/license/jagrosh/MusicBot.svg)](https://github.com/jagrosh/MusicBot/blob/master/LICENSE)
-[![Discord](https://discordapp.com/api/guilds/147698382092238848/widget.png)](https://discord.gg/0p9LSGoRLu6Pet0k)<br>
-[![CircleCI](https://img.shields.io/circleci/project/github/jagrosh/MusicBot/master.svg)](https://circleci.com/gh/jagrosh/MusicBot)
-[![AppVeyor](https://ci.appveyor.com/api/projects/status/gdu6nyte5psj6xfk/branch/master?svg=true)](https://ci.appveyor.com/project/jagrosh/musicbot/branch/master)
-[![CodeFactor](https://www.codefactor.io/repository/github/jagrosh/musicbot/badge)](https://www.codefactor.io/repository/github/jagrosh/musicbot)
+## Build requirements
 
-A cross-platform Discord music bot with a clean interface, and that is easy to set up and run yourself!
+- [Oracle JDK 8](https://www.oracle.com/au/java/technologies/javase/javase-jdk8-downloads.html) (OpenJDK support not guaranteed)
+- Environment variables set (JAVA_HOME=X.Y.Z; PATH, etc. where X.Y.Z is version number)
 
-[![Setup](http://i.imgur.com/VvXYp5j.png)](https://github.com/jagrosh/MusicBot/wiki/Setup)
+Verify install with `java -version` - version => 1.8.0
 
-## Features
-  * Easy to run (just make sure Java is installed, and run!)
-  * Fast loading of songs
-  * No external keys needed (besides a Discord Bot token)
-  * Smooth playback
-  * Server-specific setup for the "DJ" role that can moderate the music
-  * Clean and beautiful menus
-  * Supports many sites, including Youtube, Soundcloud, and more
-  * Supports many online radio/streams
-  * Supports local files
-  * Playlist support (both web/youtube, and local)
+## Compile
 
-## Example
-![Loading Example...](https://i.imgur.com/kVtTKvS.gif)
+1. Clone the modified [JLyrics](https://github.com/aidswidjaja/JLyrics/) dependency
 
-## Setup
-Please see the [Setup Page](https://github.com/jagrosh/MusicBot/wiki/Setup) in the wiki to run this bot yourself!
+```bash
+git clone https://github.com/aidswidjaja/JLyrics.git
+```
 
-## Questions/Suggestions/Bug Reports
-**Please read the [Issues List](https://github.com/jagrosh/MusicBot/issues) before suggesting a feature**. If you have a question, need troubleshooting help, or want to brainstorm a new feature, please start a [Discussion](https://github.com/jagrosh/MusicBot/discussions). If you'd like to suggest a feature or report a reproducible bug, please open an [Issue](https://github.com/jagrosh/MusicBot/issues) on this repository. If you like this bot, be sure to add a star to the libraries that make this possible: [**JDA**](https://github.com/DV8FromTheWorld/JDA) and [**lavaplayer**](https://github.com/sedmelluq/lavaplayer)!
+2. Build the JLyrics dependency
 
-## Editing
-This bot (and the source code here) might not be easy to edit for inexperienced programmers. The main purpose of having the source public is to show the capabilities of the libraries, to allow others to understand how the bot works, and to allow those knowledgeable about java, JDA, and Discord bot development to contribute. There are many requirements and dependencies required to edit and compile it, and there will not be support provided for people looking to make changes on their own. Instead, consider making a feature request (see the above section). If you choose to make edits, please do so in accordance with the Apache 2.0 License.
+```bash
+cd JLyrics
+mvn clean package
+```
+
+3. Install the JLyrics dependency in your local maven repository - this installs the jar to `~/.m2/repository/com/jagrosh/JLyrics/0.5/JLyrics-0.5.jar`
+
+```bash
+mvn install:install-file -Dfile=/path/to/file/.../JLyrics/target/JLyrics-0.5-jar-with-dependencies.jar -DgroupId=com.jagrosh -DartifactId=JLyrics -Dversion=0.5 -Dpackaging=jar
+```
+
+4. Build to jar
+
+```bash
+# if pwd == JLyrics - cd out of it
+cd discord-music-bot
+mvn clean package
+```
+
+5. Run jar with arguments
+
+```bash
+# if pwd != discord-music-bot - run `cd discord-music-bot`
+java -Dnogui=true -jar target/JMusicBot-Snapshot-All.jar
+```
+
+## License
+
+```
+Copyright 2016-2021 John Grosh (jagrosh).
+Copyright 2021 aidswidjaja.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
