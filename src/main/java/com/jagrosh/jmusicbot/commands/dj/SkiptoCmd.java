@@ -29,7 +29,7 @@ public class SkiptoCmd extends DJCommand
     public SkiptoCmd(Bot bot)
     {
         super(bot);
-        this.name = "skipto";
+        this.name = "jump";
         this.help = "skips to the specified song";
         this.arguments = "<position>";
         this.aliases = bot.getConfig().getAliases(this.name);

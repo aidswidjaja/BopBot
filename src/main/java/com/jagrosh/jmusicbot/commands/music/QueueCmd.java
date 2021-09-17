@@ -53,7 +53,7 @@ public class QueueCmd extends MusicCommand
         builder = new Paginator.Builder()
                 .setColumns(1)
                 .setFinalAction(m -> {try{m.clearReactions().queue();}catch(PermissionException ignore){}})
-                .setItemsPerPage(10)
+                .setItemsPerPage(20)
                 .waitOnSinglePage(false)
                 .useNumberedItems(true)
                 .showPageNumbers(true)
@@ -78,7 +78,7 @@ public class QueueCmd extends MusicCommand
             Message nowp = ah.getNowPlaying(event.getJDA());
             Message nonowp = ah.getNoMusicPlaying(event.getJDA());
             Message built = new MessageBuilder()
-                    .setContent(event.getClient().getWarning() + " There is no music in the queue!")
+                    .setContent(event.getClient().getWarning() + " There's no music in the queue! \uD83D\uDE2D")
                     .setEmbed((nowp==null ? nonowp : nowp).getEmbeds().get(0)).build();
             event.reply(built, m -> 
             {

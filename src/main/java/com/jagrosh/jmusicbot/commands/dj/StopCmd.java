@@ -29,8 +29,8 @@ public class StopCmd extends DJCommand
     public StopCmd(Bot bot)
     {
         super(bot);
-        this.name = "stop";
-        this.help = "stops the current song and clears the queue";
+        this.name = "disconnect";
+        this.help = "bot goes bye bye";
         this.aliases = bot.getConfig().getAliases(this.name);
         this.bePlaying = false;
     }
@@ -41,6 +41,6 @@ public class StopCmd extends DJCommand
         AudioHandler handler = (AudioHandler)event.getGuild().getAudioManager().getSendingHandler();
         handler.stopAndClear();
         event.getGuild().getAudioManager().closeAudioConnection();
-        event.reply(event.getClient().getSuccess()+" The player has stopped and the queue has been cleared.");
+        event.reply(event.getClient().getSuccess()+" bye bye :D");
     }
 }

@@ -17,7 +17,7 @@ public class MoveTrackCmd extends DJCommand
     public MoveTrackCmd(Bot bot)
     {
         super(bot);
-        this.name = "movetrack";
+        this.name = "move";
         this.help = "move a track in the current queue to a different position";
         this.arguments = "<from> <to>";
         this.aliases = bot.getConfig().getAliases(this.name);

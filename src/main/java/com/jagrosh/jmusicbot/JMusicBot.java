@@ -78,13 +78,13 @@ public class JMusicBot
         EventWaiter waiter = new EventWaiter();
         SettingsManager settings = new SettingsManager();
         Bot bot = new Bot(waiter, config, settings);
-        
+
         AboutCommand aboutCommand = new AboutCommand(Color.BLUE.brighter(),
-                                "a music bot that is [easy to host yourself!](https://github.com/jagrosh/MusicBot) (v"+version+")",
-                                new String[]{"High-quality music playback", "FairQueue™ Technology", "Easy to host yourself"},
+                                "a music bot for Adrian and friends. Learn more on the [BopBot GitHub repository](https://github.com/aidswidjaja/BopBot) or visit [our website](https://bopbot.adrian.id.au).",
+                                new String[]{"High-quality music playback", "Streaming from multiple sources supported", "Advanced features and options", "YouTube can't ban if YouTube doesn't know ;)"},
                                 RECOMMENDED_PERMS);
         aboutCommand.setIsAuthor(false);
-        aboutCommand.setReplacementCharacter("\uD83C\uDFB6"); // 🎶
+        aboutCommand.setReplacementCharacter("\uD83E\uDD54"); // 🥔
         
         // set up the command client
         CommandClientBuilder cb = new CommandClientBuilder()
