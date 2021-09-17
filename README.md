@@ -27,21 +27,21 @@ mvn clean package
 3. Install the JLyrics dependency in your local maven repository - this installs the jar to `~/.m2/repository/com/jagrosh/JLyrics/0.5/JLyrics-0.5.jar`
 
 ```bash
-mvn install:install-file -Dfile=/path/to/file/.../JLyrics/target/JLyrics-0.5-jar-with-dependencies.jar -DgroupId=com.jagrosh -DartifactId=JLyrics -Dversion=0.5 -Dpackaging=jar
+mvn install:install-file -Dfile=/path/to/dir/.../JLyrics/target/JLyrics-0.5-jar-with-dependencies.jar -DgroupId=com.jagrosh -DartifactId=JLyrics -Dversion=0.5 -Dpackaging=jar
 ```
 
 4. Build to jar
 
 ```bash
-# if pwd == JLyrics - cd out of it
-cd discord-music-bot
+# if pwd == JLyrics then cd out of it
+cd bopbot
 mvn clean package
 ```
 
 5. Run jar with arguments
 
 ```bash
-# if pwd != discord-music-bot - run `cd discord-music-bot`
+# if pwd != bopbot then run `cd bopbot`
 java -Dnogui=true -jar target/JMusicBot-Snapshot-All.jar
 ```
 
