@@ -1,7 +1,7 @@
 /nbproject/
-/target/
 /Playlists/
 /test/
+/target/config.txt
 *.json
 *.txt
 nb*.xml
