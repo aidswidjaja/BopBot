@@ -55,7 +55,8 @@ public class ChangelogCmd extends Command
                 .setTitle("\uD83E\uDD54 Check out what's new with BopBot") // 🥔
                 .setDescription("• Added new aliases for existing commands which can be found on [our website](https://bopbot.adrian.id.au)" +
                         "\n • Added the new `stop` command which clears the queue and stops currently playing music, but doesn't disconnect the bot" +
-                        "\n • Added the new `changelog` command (yep this one!) to show you what's new with BopBot" +
+                        "\n • See what's new on BopBot with the new `changelog` command (yep this one!)" +
+                        "\n • Add bass boost to any track with the new `bassboost` command" +
                         "**Check out our website at [bopbot.adrian.id.au](https://bopbot.adrian.id.au)")
                 .setFooter("You're using version 1.1 of BopBot" +
                         "\nFeature requests can be messaged to aidswidjaja#2805");
