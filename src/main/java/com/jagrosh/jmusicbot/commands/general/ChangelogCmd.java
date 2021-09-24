@@ -57,8 +57,8 @@ public class ChangelogCmd extends Command
                         "\n • Added the new `stop` command which clears the queue and stops currently playing music, but doesn't disconnect the bot" +
                         "\n • See what's new on BopBot with the new `changelog` command (yep this one!)" +
                         "\n • Add bass boost to any track with the new `bassboost` command" +
-                        "**Check out our website at [bopbot.adrian.id.au](https://bopbot.adrian.id.au)")
-                .setFooter("You're using version 1.1.1 of BopBot" +
+                        "\n\n**Check out our website at [bopbot.adrian.id.au](https://bopbot.adrian.id.au)")
+                .setFooter("You're using version 1.1.2 of BopBot" +
                         "\nFeature requests can be messaged to aidswidjaja#2805");
         event.getChannel().sendMessage(builder.setEmbed(ebuilder.build()).build()).queue();
     }
