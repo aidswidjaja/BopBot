@@ -38,7 +38,7 @@ public class SetnameCmd extends OwnerCommand
     @Override
     protected void execute(CommandEvent event) 
     {
-        try 
+        try
         {
             String oldname = event.getSelfUser().getName();
             event.getSelfUser().getManager().setName(event.getArgs()).complete(false);
@@ -52,5 +52,6 @@ public class SetnameCmd extends OwnerCommand
         {
             event.reply(event.getClient().getError()+" That name is not valid!");
         }
+
     }
 }

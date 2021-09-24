@@ -37,7 +37,7 @@ public class Settings implements GuildSettingsProvider
     private String defaultPlaylist;
     private boolean repeatMode;
     private String prefix;
-    
+
     public Settings(SettingsManager manager, String textId, String voiceId, String roleId, int volume, String defaultPlaylist, boolean repeatMode, String prefix)
     {
         this.manager = manager;
@@ -118,7 +118,7 @@ public class Settings implements GuildSettingsProvider
     {
         return prefix;
     }
-    
+
     @Override
     public Collection<String> getPrefixes()
     {
@@ -167,4 +167,5 @@ public class Settings implements GuildSettingsProvider
         this.prefix = prefix;
         this.manager.writeSettings();
     }
+
 }

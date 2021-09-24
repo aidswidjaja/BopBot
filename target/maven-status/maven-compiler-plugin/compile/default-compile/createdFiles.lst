@@ -8,6 +8,7 @@ com/jagrosh/jmusicbot/commands/music/RemoveCmd.class
 com/jagrosh/jmusicbot/audio/AloneInVoiceHandler.class
 com/jagrosh/jmusicbot/commands/music/PlayCmd$1.class
 com/jagrosh/jmusicbot/commands/owner/PlaylistCmd$MakelistCmd.class
+com/jagrosh/jmusicbot/commands/dj/DisconnectCmd.class
 com/jagrosh/jmusicbot/commands/dj/PauseCmd.class
 com/jagrosh/jmusicbot/playlist/PlaylistLoader.class
 com/jagrosh/jmusicbot/commands/owner/PlaylistCmd.class
@@ -25,6 +26,7 @@ com/jagrosh/jmusicbot/commands/admin/PrefixCmd.class
 com/jagrosh/jmusicbot/gui/GUI$1.class
 com/jagrosh/jmusicbot/commands/owner/SetgameCmd$SetstreamCmd.class
 com/jagrosh/jmusicbot/commands/owner/PlaylistCmd$DeletelistCmd.class
+com/jagrosh/jmusicbot/commands/music/BassboostCmd.class
 com/jagrosh/jmusicbot/commands/DJCommand.class
 com/jagrosh/jmusicbot/commands/music/NowplayingCmd.class
 com/jagrosh/jmusicbot/commands/AdminCommand.class
@@ -60,6 +62,7 @@ com/jagrosh/jmusicbot/commands/owner/SetgameCmd$1.class
 com/jagrosh/jmusicbot/commands/dj/MoveTrackCmd.class
 com/jagrosh/jmusicbot/entities/Prompt.class
 com/jagrosh/jmusicbot/gui/GUI.class
+com/jagrosh/jmusicbot/commands/admin/BassboostEnabledCmd.class
 com/jagrosh/jmusicbot/commands/owner/EvalCmd.class
 com/jagrosh/jmusicbot/settings/Settings.class
 com/jagrosh/jmusicbot/commands/owner/DebugCmd.class
@@ -77,7 +80,8 @@ com/jagrosh/jmusicbot/commands/music/PlayCmd$ResultHandler.class
 com/jagrosh/jmusicbot/commands/music/LyricsCmd.class
 com/jagrosh/jmusicbot/commands/owner/AutoplaylistCmd.class
 com/jagrosh/jmusicbot/audio/TransformativeAudioSourceManager.class
-com/jagrosh/jmusicbot/commands/dj/StopCmd.class
+com/jagrosh/jmusicbot/commands/dj/ClearCmd.class
 com/jagrosh/jmusicbot/commands/music/SearchCmd$ResultHandler.class
+com/jagrosh/jmusicbot/commands/general/ChangelogCmd.class
 com/jagrosh/jmusicbot/commands/admin/SettcCmd.class
 com/jagrosh/jmusicbot/commands/dj/PlaynextCmd$1.class

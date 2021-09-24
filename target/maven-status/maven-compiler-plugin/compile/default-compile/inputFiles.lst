@@ -1,7 +1,9 @@
+/Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/dj/ClearCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/audio/NowplayingHandler.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/gui/TextAreaOutputStream.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/owner/SetgameCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/queue/Queueable.java
+/Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/music/BassboostCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/MusicCommand.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/settings/Settings.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/music/SCSearchCmd.java
@@ -10,7 +12,9 @@
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/owner/SetavatarCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/music/PlaylistsCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/dj/PauseCmd.java
+/Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/general/ChangelogCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/dj/ForceRemoveCmd.java
+/Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/admin/BassboostEnabledCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/playlist/PlaylistLoader.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/music/QueueCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/admin/SetvcCmd.java
@@ -20,6 +24,7 @@
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/audio/QueuedTrack.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/music/SkipCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/entities/Pair.java
+/Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/dj/DisconnectCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/entities/Prompt.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/settings/SettingsManager.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/utils/OtherUtil.java
@@ -34,7 +39,6 @@
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/music/ShuffleCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/audio/PlayerManager.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/owner/PlaylistCmd.java
-/Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/dj/StopCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/music/RemoveCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/music/PlayCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/audio/AudioHandler.java

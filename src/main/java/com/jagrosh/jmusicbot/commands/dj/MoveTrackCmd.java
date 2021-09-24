@@ -33,7 +33,7 @@ public class MoveTrackCmd extends DJCommand
         String[] parts = event.getArgs().split("\\s+", 2);
         if(parts.length < 2)
         {
-            event.replyError("Please include two valid indexes.");
+            event.replyError("Please include two valid integers. \uD83D\uDE15"); // 😕
             return;
         }
 
@@ -45,7 +45,7 @@ public class MoveTrackCmd extends DJCommand
         }
         catch (NumberFormatException e)
         {
-            event.replyError("Please provide two valid indexes.");
+            event.replyError("Please provide two valid integers. \uD83D\uDE15"); // 😕
             return;
         }
 

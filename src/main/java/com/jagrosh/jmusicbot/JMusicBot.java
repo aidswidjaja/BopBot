@@ -18,6 +18,7 @@ package com.jagrosh.jmusicbot;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
 import com.jagrosh.jdautilities.examples.command.*;
+import com.jagrosh.jmusicbot.audio.PlayerManager;
 import com.jagrosh.jmusicbot.commands.admin.*;
 import com.jagrosh.jmusicbot.commands.dj.*;
 import com.jagrosh.jmusicbot.commands.general.*;
@@ -30,6 +31,8 @@ import com.jagrosh.jmusicbot.utils.OtherUtil;
 import java.awt.Color;
 import java.util.Arrays;
 import javax.security.auth.login.LoginException;
+
+import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import net.dv8tion.jda.api.*;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
@@ -80,9 +83,10 @@ public class JMusicBot
         Bot bot = new Bot(waiter, config, settings);
 
         AboutCommand aboutCommand = new AboutCommand(Color.BLUE.brighter(),
-                                "a music bot for Adrian and friends. Learn more on the [BopBot GitHub repository](https://github.com/aidswidjaja/BopBot) or visit [our website](https://bopbot.adrian.id.au).",
-                                new String[]{"High-quality music playback", "Streaming from multiple sources supported", "Advanced features and options", "YouTube can't ban if YouTube doesn't know ;)"},
+                                "a friendly music bot for Adrian and friends. Learn more on the [BopBot GitHub repository](https://github.com/aidswidjaja/BopBot) or visit [our website](https://bopbot.adrian.id.au).",
+                                new String[]{"High-quality music playback", "Stream tunes from YouTube and SoundCloud", "Advanced features and options", "YouTube can't ban if YouTube don't know ;)"},
                                 RECOMMENDED_PERMS);
+
         aboutCommand.setIsAuthor(false);
         aboutCommand.setReplacementCharacter("\uD83E\uDD54"); // 🥔
         
@@ -96,9 +100,11 @@ public class JMusicBot
                 .setLinkedCacheSize(200)
                 .setGuildSettingsManager(settings)
                 .addCommands(aboutCommand,
+                        new ChangelogCmd(bot),
                         new PingCommand(),
                         new SettingsCmd(bot),
-                        
+
+                        new BassboostCmd(bot),
                         new LyricsCmd(bot),
                         new NowplayingCmd(bot),
                         new PlayCmd(bot),
@@ -110,6 +116,8 @@ public class JMusicBot
                         new ShuffleCmd(bot),
                         new SkipCmd(bot),
 
+                        new ClearCmd(bot),
+                        new DisconnectCmd(bot),
                         new ForceRemoveCmd(bot),
                         new ForceskipCmd(bot),
                         new MoveTrackCmd(bot),
@@ -117,9 +125,9 @@ public class JMusicBot
                         new PlaynextCmd(bot),
                         new RepeatCmd(bot),
                         new SkiptoCmd(bot),
-                        new StopCmd(bot),
                         new VolumeCmd(bot),
-                        
+
+                        new BassboostEnabledCmd(bot),
                         new PrefixCmd(bot),
                         new SetdjCmd(bot),
                         new SettcCmd(bot),

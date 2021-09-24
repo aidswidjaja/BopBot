@@ -2,6 +2,7 @@
 /Playlists/
 /test/
 /target/config.txt
+config.txt
 *.json
 *.txt
 nb*.xml
