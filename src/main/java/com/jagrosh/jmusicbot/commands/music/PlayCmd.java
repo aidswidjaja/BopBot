@@ -15,6 +15,8 @@
  */
 package com.jagrosh.jmusicbot.commands.music;
 
+import com.jagrosh.jmusicbot.settings.Settings;
+import com.sedmelluq.discord.lavaplayer.filter.equalizer.EqualizerFactory;
 import com.sedmelluq.discord.lavaplayer.player.AudioLoadResultHandler;
 import com.sedmelluq.discord.lavaplayer.tools.FriendlyException;
 import com.sedmelluq.discord.lavaplayer.tools.FriendlyException.Severity;
@@ -34,6 +36,8 @@ import java.util.concurrent.TimeUnit;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.exceptions.PermissionException;
+
+import com.sedmelluq.discord.lavaplayer.filter.equalizer.EqualizerFactory;
 
 /**
  *
@@ -58,6 +62,11 @@ public class PlayCmd extends MusicCommand
         this.bePlaying = false;
         this.children = new Command[]{new PlaylistCmd(bot)};
     }
+
+    public static final float[] BASS_BOOST = {0.2f, 0.15f, 0.1f, 0.05f, 0.0f, -0.05f, -0.1f, -0.1f, -0.1f, -0.1f, -0.1f,
+            -0.1f, -0.1f, -0.1f, -0.1f};
+
+    public static EqualizerFactory equalizer;
 
     @Override
     public void doCommand(CommandEvent event) 
@@ -88,6 +97,28 @@ public class PlayCmd extends MusicCommand
                 ? event.getArgs().substring(1,event.getArgs().length()-1) 
                 : event.getArgs().isEmpty() ? event.getMessage().getAttachments().get(0).getUrl() : event.getArgs();
         event.reply(loadingEmoji+" Loading... `["+args+"]`", m -> bot.getPlayerManager().loadItemOrdered(event.getGuild(), args, new ResultHandler(m,event,false)));
+
+        AudioHandler handler = (AudioHandler)event.getGuild().getAudioManager().getSendingHandler();
+        Settings s = event.getClient().getSettingsFor(event.getGuild());
+
+        this.equalizer = new EqualizerFactory();
+
+        handler.getPlayer().setFilterFactory(equalizer);
+        if(s.getBassBoost()) {
+
+            event.reply("\uD83C\uDFA3 Heads up! Bass boost is **on!!**"); // 🎣
+
+            for (int i = 0; i < BASS_BOOST.length; i++) {
+                equalizer.setGain(i, BASS_BOOST[i] + 2);
+            }
+
+            for (int i = 0; i < BASS_BOOST.length; i++) {
+                equalizer.setGain(i, -BASS_BOOST[i] + 1);
+
+            }
+        } else {
+            handler.getPlayer().setFilterFactory(null);
+        }
     }
     
     private class ResultHandler implements AudioLoadResultHandler

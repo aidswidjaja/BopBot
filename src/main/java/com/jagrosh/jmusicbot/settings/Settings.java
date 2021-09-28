@@ -37,8 +37,9 @@ public class Settings implements GuildSettingsProvider
     private String defaultPlaylist;
     private boolean repeatMode;
     private String prefix;
+    private boolean bassBoost;
 
-    public Settings(SettingsManager manager, String textId, String voiceId, String roleId, int volume, String defaultPlaylist, boolean repeatMode, String prefix)
+    public Settings(SettingsManager manager, String textId, String voiceId, String roleId, int volume, String defaultPlaylist, boolean repeatMode, String prefix, boolean bassBoost)
     {
         this.manager = manager;
         try
@@ -69,9 +70,10 @@ public class Settings implements GuildSettingsProvider
         this.defaultPlaylist = defaultPlaylist;
         this.repeatMode = repeatMode;
         this.prefix = prefix;
+        this.bassBoost = bassBoost;
     }
     
-    public Settings(SettingsManager manager, long textId, long voiceId, long roleId, int volume, String defaultPlaylist, boolean repeatMode, String prefix)
+    public Settings(SettingsManager manager, long textId, long voiceId, long roleId, int volume, String defaultPlaylist, boolean repeatMode, String prefix, boolean bassBoost)
     {
         this.manager = manager;
         this.textId = textId;
@@ -81,6 +83,7 @@ public class Settings implements GuildSettingsProvider
         this.defaultPlaylist = defaultPlaylist;
         this.repeatMode = repeatMode;
         this.prefix = prefix;
+        this.bassBoost = bassBoost;
     }
     
     // Getters
@@ -117,6 +120,11 @@ public class Settings implements GuildSettingsProvider
     public String getPrefix()
     {
         return prefix;
+    }
+
+    public boolean getBassBoost()
+    {
+        return bassBoost;
     }
 
     @Override
@@ -168,4 +176,9 @@ public class Settings implements GuildSettingsProvider
         this.manager.writeSettings();
     }
 
+    public void setBassBoost(boolean bassBoost)
+    {
+        this.bassBoost = bassBoost;
+        this.manager.writeSettings();
+    }
 }

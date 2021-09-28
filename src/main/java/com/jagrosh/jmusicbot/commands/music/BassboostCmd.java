@@ -56,21 +56,20 @@ public class BassboostCmd extends MusicCommand
 
     public static EqualizerFactory equalizer;
 
-    boolean bassBoost = false;
-
     @Override
     public void doCommand(CommandEvent event)
     {
         AudioHandler handler = (AudioHandler)event.getGuild().getAudioManager().getSendingHandler();
+        Settings s = event.getClient().getSettingsFor(event.getGuild());
+
         this.equalizer = new EqualizerFactory();
 
         handler.getPlayer().setFilterFactory(equalizer);
 
         if(event.getArgs().isEmpty())
         {
-            if (bassBoost) {
+            if (s.getBassBoost()) {
                 event.reply("\uD83D\uDC1F  Bass boost is currently **on**! Use `-bassboost on/off` to toggle it."); // 🐟
-
             }
             else
             {
@@ -79,7 +78,7 @@ public class BassboostCmd extends MusicCommand
         }
         else if(event.getArgs().equalsIgnoreCase("true") || event.getArgs().equalsIgnoreCase("on")) // turns bass boost on
         {
-            if (bassBoost) { // if bass boost is already on, then tell the user
+            if (s.getBassBoost()) { // if bass boost is already on, then tell the user
                 event.reply("\uD83D\uDC1F  Bass boost is already **on!!** (rip your ears...)"); // 🐟
             }
             else // user asks for bass boost to turn on so let's give the people what they want
@@ -95,20 +94,20 @@ public class BassboostCmd extends MusicCommand
 
                 }
 
-                bassBoost = true;
+                s.setBassBoost(true);
             }
         }
         else if (event.getArgs().equalsIgnoreCase("false") || event.getArgs().equalsIgnoreCase("off")) // turns bass boost off
         {
-            if (bassBoost) { // if bass boost is already on, then turn it off
+            if (s.getBassBoost()) { // if bass boost is already on, then turn it off
                 event.reply("\uD83C\uDFA3 Turning bass boost **off**. It might take a couple seconds..."); // 🎣
                 handler.getPlayer().setFilterFactory(null);
-
-                bassBoost = false;
+                s.setBassBoost(false);
             }
             else
             { // bass boost is already off, so tell the user
                 event.reply("\uD83C\uDFA3 Bass boost is already **off**."); // 🎣
+
             }
         }
     }

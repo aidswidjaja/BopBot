@@ -30,8 +30,8 @@ public class BassboostEnabledCmd extends AdminCommand
     public BassboostEnabledCmd(Bot bot)
     {
         this.name = "bbadmin";
-        this.help = "admins can enable/disable bass boost in their server";
-        this.arguments = "[enabled|disabled]";
+        this.help = "info on bass boost";
+        this.arguments = "";
         this.aliases = bot.getConfig().getAliases(this.name);
     }
     
