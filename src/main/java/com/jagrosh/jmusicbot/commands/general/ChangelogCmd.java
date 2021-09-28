@@ -58,7 +58,7 @@ public class ChangelogCmd extends Command
                         "\n • See what's new on BopBot with the new `changelog` command (yep this one!)" +
                         "\n • Fixed the bass boost feature, which lets you add bass boost to any track with the new `bassboost` command" +
                         "\n\n**Check out our website at [bopbot.adrian.id.au](https://bopbot.adrian.id.au)**")
-                .setFooter("You're using version 1.1.3 of BopBot" +
+                .setFooter("You're using version 1.1.4 of BopBot" +
                         "\nFeature requests can be messaged to aidswidjaja#2805");
         event.getChannel().sendMessage(builder.setEmbed(ebuilder.build()).build()).queue();
     }

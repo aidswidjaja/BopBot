@@ -17,6 +17,7 @@ package com.jagrosh.jmusicbot.audio;
 
 import com.jagrosh.jmusicbot.JMusicBot;
 import com.jagrosh.jmusicbot.playlist.PlaylistLoader.Playlist;
+import com.sedmelluq.discord.lavaplayer.filter.equalizer.EqualizerFactory;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.player.event.AudioEventAdapter;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
@@ -54,6 +55,11 @@ public class AudioHandler extends AudioEventAdapter implements AudioSendHandler
     private final long guildId;
     
     private AudioFrame lastFrame;
+
+    public static final float[] BASS_BOOST = {0.2f, 0.15f, 0.1f, 0.05f, 0.0f, -0.05f, -0.1f, -0.1f, -0.1f, -0.1f, -0.1f,
+            -0.1f, -0.1f, -0.1f, -0.1f};
+
+    public static EqualizerFactory equalizer;
 
     protected AudioHandler(PlayerManager manager, Guild guild, AudioPlayer player)
     {
@@ -184,6 +190,34 @@ public class AudioHandler extends AudioEventAdapter implements AudioSendHandler
     {
         votes.clear();
         manager.getBot().getNowplayingHandler().onTrackUpdate(guildId, track, this);
+
+        /* bass boost when the mode is enabled but the bot had died before */
+        /* refer to repeat mode class */
+
+        Settings s = manager.getBot().getSettingsManager().getSettings(guildId);
+
+        this.equalizer = new EqualizerFactory();
+
+        getPlayer().setFilterFactory(equalizer);
+
+        if (s.getBassBoost()) {
+
+            for (int i = 0; i < BASS_BOOST.length; i++) {
+                equalizer.setGain(i, BASS_BOOST[i] + 2);
+            }
+
+            for (int i = 0; i < BASS_BOOST.length; i++) {
+                equalizer.setGain(i, -BASS_BOOST[i] + 1);
+
+            }
+
+        }
+        else
+        {
+
+            getPlayer().setFilterFactory(null);
+
+        }
     }
 
     

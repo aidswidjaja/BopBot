@@ -108,16 +108,6 @@ public class PlayCmd extends MusicCommand
 
             event.reply("\uD83C\uDFA3 Heads up! Bass boost is **on!!**"); // 🎣
 
-            for (int i = 0; i < BASS_BOOST.length; i++) {
-                equalizer.setGain(i, BASS_BOOST[i] + 2);
-            }
-
-            for (int i = 0; i < BASS_BOOST.length; i++) {
-                equalizer.setGain(i, -BASS_BOOST[i] + 1);
-
-            }
-        } else {
-            handler.getPlayer().setFilterFactory(null);
         }
     }
     

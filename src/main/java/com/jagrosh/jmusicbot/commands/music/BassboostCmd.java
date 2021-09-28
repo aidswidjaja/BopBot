@@ -85,6 +85,8 @@ public class BassboostCmd extends MusicCommand
             {
                 event.reply("\uD83D\uDC1F  Turning bass boost **on**! It might take a couple seconds..."); // 🐟
 
+                s.setBassBoost(true);
+
                 for (int i = 0; i < BASS_BOOST.length; i++) {
                     equalizer.setGain(i, BASS_BOOST[i] + 2);
                 }
@@ -94,7 +96,6 @@ public class BassboostCmd extends MusicCommand
 
                 }
 
-                s.setBassBoost(true);
             }
         }
         else if (event.getArgs().equalsIgnoreCase("false") || event.getArgs().equalsIgnoreCase("off")) // turns bass boost off
