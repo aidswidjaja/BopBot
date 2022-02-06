@@ -51,12 +51,9 @@ java -Dnogui=true -jar target/JMusicBot-Snapshot-All.jar
 - Age-restricted videos on YouTube can't be played right now - waiting for [#649](https://github.com/sedmelluq/lavaplayer/pull/649)
 - SoundCloud tracks might sometimes not work - waiting for [#650](https://github.com/sedmelluq/lavaplayer/pull/650)
 
-## Wishlist
+## PRs used
 
-- Switching to our own YouTube API key for lavaplayer (which is just used as a maven binary dependency) would be ideal
-- Audio effects like 8D audio, bass boost, nightcore
-- Enable Twitch streaming status
-- Fix help and about section to have more info
+- https://github.com/MichailiK/MusicBot/tree/pr/feature/seeking
 
 ## License
 
