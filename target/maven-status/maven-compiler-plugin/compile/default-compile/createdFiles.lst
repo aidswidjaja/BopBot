@@ -40,6 +40,7 @@ com/jagrosh/jmusicbot/audio/PlayerManager.class
 com/jagrosh/jmusicbot/commands/owner/SetgameCmd$SetwatchCmd.class
 com/jagrosh/jmusicbot/commands/music/QueueCmd.class
 com/jagrosh/jmusicbot/commands/admin/SetvcCmd.class
+com/jagrosh/jmusicbot/audio/RequestMetadata$UserInfo.class
 com/jagrosh/jmusicbot/commands/music/SCSearchCmd.class
 com/jagrosh/jmusicbot/commands/owner/PlaylistCmd$DefaultlistCmd.class
 com/jagrosh/jmusicbot/settings/SettingsManager.class
@@ -62,9 +63,14 @@ com/jagrosh/jmusicbot/commands/owner/SetgameCmd$1.class
 com/jagrosh/jmusicbot/commands/dj/MoveTrackCmd.class
 com/jagrosh/jmusicbot/entities/Prompt.class
 com/jagrosh/jmusicbot/gui/GUI.class
+com/jagrosh/jmusicbot/commands/admin/SkipratioCmd.class
+com/jagrosh/jmusicbot/settings/RepeatMode.class
 com/jagrosh/jmusicbot/commands/admin/BassboostEnabledCmd.class
+com/jagrosh/jmusicbot/audio/RequestMetadata$RequestInfo.class
 com/jagrosh/jmusicbot/commands/owner/EvalCmd.class
 com/jagrosh/jmusicbot/settings/Settings.class
+com/jagrosh/jmusicbot/audio/RequestMetadata.class
+com/jagrosh/jmusicbot/audio/RequestMetadata$1.class
 com/jagrosh/jmusicbot/commands/owner/DebugCmd.class
 com/jagrosh/jmusicbot/entities/Prompt$Level.class
 com/jagrosh/jmusicbot/playlist/PlaylistLoader$Playlist.class

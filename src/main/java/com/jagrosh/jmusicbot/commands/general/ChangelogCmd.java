@@ -54,11 +54,10 @@ public class ChangelogCmd extends Command
                 .setColor(event.getSelfMember().getColor())
                 .setTitle("\uD83E\uDD54 Check out what's new with BopBot") // 🥔
                 .setDescription("• Added new aliases for existing commands which can be found on [our website](https://bopbot.adrian.id.au)" +
-                        "\n • Added the new `stop` command which clears the queue and stops currently playing music, but doesn't disconnect the bot" +
-                        "\n • See what's new on BopBot with the new `changelog` command (yep this one!)" +
-                        "\n • Fixed the bass boost feature, which lets you add bass boost to any track with the new `bassboost` command" +
+                        "\n • Hyperlinks to videos in the `queue` command" +
+                        "\n • Potato potato" +
                         "\n\n**Check out our website at [bopbot.adrian.id.au](https://bopbot.adrian.id.au)**")
-                .setFooter("You're using version 1.1.4 of BopBot" +
+                .setFooter("You're using version 1.2 of BopBot" +
                         "\nFeature requests can be messaged to aidswidjaja#2805");
         event.getChannel().sendMessage(builder.setEmbed(ebuilder.build()).build()).queue();
     }

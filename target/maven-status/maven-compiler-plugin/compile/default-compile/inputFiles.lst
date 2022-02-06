@@ -48,11 +48,14 @@
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/OwnerCommand.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/owner/SetstatusCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/dj/RepeatCmd.java
+/Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/admin/SkipratioCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/AdminCommand.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/Bot.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/music/LyricsCmd.java
+/Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/audio/RequestMetadata.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/admin/PrefixCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/owner/EvalCmd.java
+/Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/settings/RepeatMode.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/owner/DebugCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/owner/AutoplaylistCmd.java
 /Users/Adrian/git/bopbot/src/main/java/com/jagrosh/jmusicbot/commands/owner/ShutdownCmd.java

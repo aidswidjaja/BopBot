@@ -35,11 +35,11 @@ public class Settings implements GuildSettingsProvider
     protected long roleId;
     private int volume;
     private String defaultPlaylist;
-    private boolean repeatMode;
+    private RepeatMode repeatMode;
     private String prefix;
     private boolean bassBoost;
-
-    public Settings(SettingsManager manager, String textId, String voiceId, String roleId, int volume, String defaultPlaylist, boolean repeatMode, String prefix, boolean bassBoost)
+    private double skipRatio;
+    public Settings(SettingsManager manager, String textId, String voiceId, String roleId, int volume, String defaultPlaylist, RepeatMode repeatMode, String prefix, boolean bassBoost, double skipRatio)
     {
         this.manager = manager;
         try
@@ -71,9 +71,10 @@ public class Settings implements GuildSettingsProvider
         this.repeatMode = repeatMode;
         this.prefix = prefix;
         this.bassBoost = bassBoost;
+        this.skipRatio = skipRatio;
     }
     
-    public Settings(SettingsManager manager, long textId, long voiceId, long roleId, int volume, String defaultPlaylist, boolean repeatMode, String prefix, boolean bassBoost)
+    public Settings(SettingsManager manager, long textId, long voiceId, long roleId, int volume, String defaultPlaylist, RepeatMode repeatMode, String prefix, boolean bassBoost, double skipRatio)
     {
         this.manager = manager;
         this.textId = textId;
@@ -84,6 +85,7 @@ public class Settings implements GuildSettingsProvider
         this.repeatMode = repeatMode;
         this.prefix = prefix;
         this.bassBoost = bassBoost;
+        this.skipRatio = skipRatio;
     }
     
     // Getters
@@ -112,7 +114,7 @@ public class Settings implements GuildSettingsProvider
         return defaultPlaylist;
     }
     
-    public boolean getRepeatMode()
+    public RepeatMode getRepeatMode()
     {
         return repeatMode;
     }
@@ -125,6 +127,10 @@ public class Settings implements GuildSettingsProvider
     public boolean getBassBoost()
     {
         return bassBoost;
+    }
+    public double getSkipRatio()
+    {
+        return skipRatio;
     }
 
     @Override
@@ -164,7 +170,7 @@ public class Settings implements GuildSettingsProvider
         this.manager.writeSettings();
     }
     
-    public void setRepeatMode(boolean mode)
+    public void setRepeatMode(RepeatMode mode)
     {
         this.repeatMode = mode;
         this.manager.writeSettings();
@@ -179,6 +185,12 @@ public class Settings implements GuildSettingsProvider
     public void setBassBoost(boolean bassBoost)
     {
         this.bassBoost = bassBoost;
+        this.manager.writeSettings(); // why wasn't this present here before?
+    }
+
+    public void setSkipRatio(double skipRatio)
+    {
+        this.skipRatio = skipRatio;
         this.manager.writeSettings();
     }
 }

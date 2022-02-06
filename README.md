@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BopBot
 
 BopBot is a customised [JMusicBot](https://github.com/jagrosh/MusicBot) instance for Adrian and friends.
