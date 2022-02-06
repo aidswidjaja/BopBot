@@ -25,19 +25,7 @@ import net.dv8tion.jda.api.entities.VoiceChannel;
  * @author John Grosh <john.a.grosh@gmail.com>
  */
 public class FormatUtil {
-    
-    public static String formatTime(long duration)
-    {
-        if(duration == Long.MAX_VALUE)
-            return "LIVE";
-        long seconds = Math.round(duration/1000.0);
-        long hours = seconds/(60*60);
-        seconds %= 60*60;
-        long minutes = seconds/60;
-        seconds %= 60;
-        return (hours>0 ? hours+":" : "") + (minutes<10 ? "0"+minutes : minutes) + ":" + (seconds<10 ? "0"+seconds : seconds);
-    }
-        
+
     public static String progressBar(double percent)
     {
         String str = "";
@@ -74,7 +62,7 @@ public class FormatUtil {
     {
         String out = " Multiple voice channels found matching \""+query+"\":";
         for(int i=0; i<6 && i<list.size(); i++)
-            out+="\n - "+list.get(i).getName()+" (ID:"+list.get(i).getId()+")";
+            out+="\n - "+list.get(i).getAsMention()+" (ID:"+list.get(i).getId()+")";
         if(list.size()>6)
             out+="\n**And "+(list.size()-6)+" more...**";
         return out;
