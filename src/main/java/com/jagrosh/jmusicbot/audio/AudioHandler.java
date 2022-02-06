@@ -18,6 +18,8 @@ package com.jagrosh.jmusicbot.audio;
 import com.jagrosh.jmusicbot.JMusicBot;
 import com.jagrosh.jmusicbot.playlist.PlaylistLoader.Playlist;
 import com.sedmelluq.discord.lavaplayer.filter.equalizer.EqualizerFactory;
+import com.jagrosh.jmusicbot.utils.TimeUtil;
+import com.jagrosh.jmusicbot.settings.RepeatMode;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.player.event.AudioEventAdapter;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
@@ -121,11 +123,12 @@ public class AudioHandler extends AudioEventAdapter implements AudioSendHandler
         return audioPlayer;
     }
     
-    public long getRequester()
+    public RequestMetadata getRequestMetadata()
     {
-        if(audioPlayer.getPlayingTrack()==null || audioPlayer.getPlayingTrack().getUserData(Long.class)==null)
-            return 0;
-        return audioPlayer.getPlayingTrack().getUserData(Long.class);
+        if(audioPlayer.getPlayingTrack() == null)
+            return RequestMetadata.EMPTY;
+        RequestMetadata rm = audioPlayer.getPlayingTrack().getUserData(RequestMetadata.class);
+        return rm == null ? RequestMetadata.EMPTY : rm;
     }
     
     public boolean playFromDefault()
@@ -160,10 +163,15 @@ public class AudioHandler extends AudioEventAdapter implements AudioSendHandler
     @Override
     public void onTrackEnd(AudioPlayer player, AudioTrack track, AudioTrackEndReason endReason) 
     {
+        RepeatMode repeatMode = manager.getBot().getSettingsManager().getSettings(guildId).getRepeatMode();
         // if the track ended normally, and we're in repeat mode, re-add it to the queue
-        if(endReason==AudioTrackEndReason.FINISHED && manager.getBot().getSettingsManager().getSettings(guildId).getRepeatMode())
+        if(endReason==AudioTrackEndReason.FINISHED && repeatMode != RepeatMode.OFF)
         {
-            queue.add(new QueuedTrack(track.makeClone(), track.getUserData(Long.class)==null ? 0L : track.getUserData(Long.class)));
+            QueuedTrack clone = new QueuedTrack(track.makeClone(), track.getUserData(RequestMetadata.class));
+            if(repeatMode == RepeatMode.ALL)
+                queue.add(clone);
+            else
+                queue.addAt(0, clone);
         }
         
         if(queue.isEmpty())
@@ -229,16 +237,17 @@ public class AudioHandler extends AudioEventAdapter implements AudioSendHandler
             Guild guild = guild(jda);
             AudioTrack track = audioPlayer.getPlayingTrack();
             MessageBuilder mb = new MessageBuilder();
-            mb.append(FormatUtil.filter(manager.getBot().getConfig().getSuccess()+" **Now Playing in "+guild.getSelfMember().getVoiceState().getChannel().getName()+"...**"));
+            mb.append(FormatUtil.filter(manager.getBot().getConfig().getSuccess()+" **Now Playing in "+guild.getSelfMember().getVoiceState().getChannel().getAsMention()+"...**"));
             EmbedBuilder eb = new EmbedBuilder();
             eb.setColor(guild.getSelfMember().getColor());
-            if(getRequester() != 0)
+            RequestMetadata rm = getRequestMetadata();
+            if(rm.getOwner() != 0L)
             {
-                User u = guild.getJDA().getUserById(getRequester());
+                User u = guild.getJDA().getUserById(rm.user.id);
                 if(u==null)
-                    eb.setAuthor("Unknown (ID:"+getRequester()+")", null, null);
+                    eb.setAuthor(rm.user.username + "#" + rm.user.discrim, null, rm.user.avatar);
                 else
-                    eb.setAuthor(u.getName()+"#"+u.getDiscriminator(), null, u.getEffectiveAvatarUrl());
+                    eb.setAuthor(u.getName() + "#" + u.getDiscriminator(), null, u.getEffectiveAvatarUrl());
             }
 
             try 
@@ -261,7 +270,7 @@ public class AudioHandler extends AudioEventAdapter implements AudioSendHandler
             double progress = (double)audioPlayer.getPlayingTrack().getPosition()/track.getDuration();
             eb.setDescription((audioPlayer.isPaused() ? JMusicBot.PAUSE_EMOJI : JMusicBot.PLAY_EMOJI)
                     + " "+FormatUtil.progressBar(progress)
-                    + " `[" + FormatUtil.formatTime(track.getPosition()) + "/" + FormatUtil.formatTime(track.getDuration()) + "]` "
+                    + " `[" + TimeUtil.formatTime(track.getPosition()) + "/" + TimeUtil.formatTime(track.getDuration()) + "]` "
                     + FormatUtil.volumeIcon(audioPlayer.getVolume()));
             
             return mb.setEmbed(eb.build()).build();
@@ -285,14 +294,14 @@ public class AudioHandler extends AudioEventAdapter implements AudioSendHandler
     {
         if(isMusicPlaying(jda))
         {
-            long userid = getRequester();
+            long userid = getRequestMetadata().getOwner();
             AudioTrack track = audioPlayer.getPlayingTrack();
             String title = track.getInfo().title;
             if(title==null || title.equals("Unknown Title"))
                 title = track.getInfo().uri;
             return "**"+title+"** ["+(userid==0 ? "autoplay" : "<@"+userid+">")+"]"
                     + "\n" + (audioPlayer.isPaused() ? JMusicBot.PAUSE_EMOJI : JMusicBot.PLAY_EMOJI) + " "
-                    + "[" + FormatUtil.formatTime(track.getDuration()) + "] "
+                    + "[" + TimeUtil.formatTime(track.getDuration()) + "] "
                     + FormatUtil.volumeIcon(audioPlayer.getVolume());
         }
         else return "No music playing " + JMusicBot.STOP_EMOJI + " " + FormatUtil.volumeIcon(audioPlayer.getVolume());
