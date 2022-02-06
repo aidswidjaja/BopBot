@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="com.jagrosh.jmusicbot.FairQueueTest" time="0.012" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="com.jagrosh.jmusicbot.FairQueueTest" time="0.017" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib"/>
     <property name="java.vm.version" value="25.301-b09"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/Adrian/git/BopBot"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/Adrian/git/bopbot"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -61,5 +61,5 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="com.jagrosh.jmusicbot.FairQueueTest" name="sameIdentifierSize" time="0.011"/>
-  <testcase classname="com.jagrosh.jmusicbot.FairQueueTest" name="differentIdentifierSize" time="0.001"/>
+  <testcase classname="com.jagrosh.jmusicbot.FairQueueTest" name="differentIdentifierSize" time="0.006"/>
 </testsuite>

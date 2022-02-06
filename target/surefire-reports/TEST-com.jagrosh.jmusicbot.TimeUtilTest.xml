@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="10" failures="0" name="com.jagrosh.jmusicbot.TimeUtilTest" time="0.001" errors="0" skipped="0">
+<testsuite tests="10" failures="0" name="com.jagrosh.jmusicbot.TimeUtilTest" time="0.024" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib"/>
     <property name="java.vm.version" value="25.301-b09"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/Adrian/git/BopBot"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/Adrian/git/bopbot"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -60,14 +60,14 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="singleDigit" time="0"/>
-  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="relativeSeekingForward" time="0"/>
+  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="singleDigit" time="0.005"/>
+  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="relativeSeekingForward" time="0.001"/>
   <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="parseTimeArgumentLength" time="0"/>
-  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="relativeSeekingBackward" time="0.001"/>
-  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="timestampTotalUnits" time="0"/>
-  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="timestampNumberFormat" time="0"/>
-  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="multipleDigits" time="0"/>
-  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="relativeSymbol" time="0"/>
-  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="decimalDigits" time="0"/>
-  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="seeking" time="0"/>
+  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="relativeSeekingBackward" time="0.005"/>
+  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="timestampTotalUnits" time="0.005"/>
+  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="timestampNumberFormat" time="0.002"/>
+  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="multipleDigits" time="0.001"/>
+  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="relativeSymbol" time="0.001"/>
+  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="decimalDigits" time="0.002"/>
+  <testcase classname="com.jagrosh.jmusicbot.TimeUtilTest" name="seeking" time="0.002"/>
 </testsuite>
