@@ -76,8 +76,9 @@ public class PlaySAOCmd extends DJCommand
                 return;
             }
 
-            if (event.getAuthor().getId() == "376232547631497217") {
-                String addMsg = FormatUtil.filter(event.getClient().getSuccess()+" no command for naughty justin-kun");
+            if (event.getAuthor().getId().equals("376232547631497217")) {
+                String addMsg = FormatUtil.filter(event.getClient().getError()+" \uD83D\uDE20\uD83D\uDE20\uD83D\uDE20  naughty justin-kun is not allowed to use this command https://i.gifer.com/B7sk.gif");
+
                 m.editMessage(addMsg).queue();
             } else {
                 AudioHandler handler = (AudioHandler)event.getGuild().getAudioManager().getSendingHandler();
