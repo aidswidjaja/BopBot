@@ -25,9 +25,12 @@
     
     <dependencies>
         <dependency>
-            <groupId>net.dv8tion</groupId> 
+			<!-- using a legacy v4.x to address https://github.com/DV8FromTheWorld/JDA/pull/2413 -->
+			<!-- aka dumb UDP 74-byte packet -->
+			<!-- originally it was on the net.dv8tion mirror but this one goes through jitpack instead just because I feel like it and also because i'm copying this implementation https://github.com/freyacodes/ukulele/pull/66/commits/e2533a7479389d5f233ada1fc42c22aec2d1bfc9-->
+            <groupId>com.github.DV8FromTheWorld</groupId> 
             <artifactId>JDA</artifactId> 
-            <version>4.3.0_324</version>
+            <version>legacy~v4-SNAPSHOT</version>
         </dependency>
         <!-- using a fork of this to fix some issues faster -->
         <dependency>
@@ -42,11 +45,11 @@
             <type>pom</type>
         </dependency>
         <!-- jitpack for now, we need to version this correctly later -->
-	<dependency>
-	    <groupId>com.github.jagrosh</groupId>
-	    <artifactId>JLyrics</artifactId>
-	    <version>-SNAPSHOT</version>
-	</dependency>
+		<dependency>
+	    	<groupId>com.github.jagrosh</groupId>
+	    	<artifactId>JLyrics</artifactId>
+	    	<version>-SNAPSHOT</version>
+		</dependency>
         <!--dependency>
             <groupId>com.jagrosh</groupId>
             <artifactId>JLyrics</artifactId>

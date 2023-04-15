@@ -1,65 +1,63 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="com.jagrosh.jmusicbot.FairQueueTest" time="0.024" errors="0" skipped="0">
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.jagrosh.jmusicbot.FairQueueTest" time="0.101" tests="2" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib"/>
-    <property name="java.vm.version" value="25.301-b09"/>
-    <property name="gopherProxySet" value="false"/>
-    <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/Adrian/git/bopbot"/>
-    <property name="java.vendor.url" value="http://java.oracle.com/"/>
-    <property name="path.separator" value=":"/>
-    <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="user.country" value="AU"/>
-    <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.os.patch.level" value="unknown"/>
-    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/Adrian/git/bopbot"/>
-    <property name="java.runtime.version" value="1.8.0_301-b09"/>
-    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/endorsed"/>
-    <property name="os.arch" value="x86_64"/>
-    <property name="java.io.tmpdir" value="/var/folders/t6/__76yfs55vbcbzyy0d8_97rm0000gp/T/"/>
-    <property name="line.separator" value="
-"/>
-    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/Adrian/Downloads/apache-maven-3.8.2/bin/m2.conf"/>
+    <property name="java.specification.version" value="20"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/Users/Adrian/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
-    <property name="maven.conf" value="/Users/Adrian/Downloads/apache-maven-3.8.2/conf"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="java.class.version" value="52.0"/>
-    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="10.16"/>
-    <property name="user.home" value="/Users/Adrian"/>
-    <property name="user.timezone" value="Australia/Sydney"/>
-    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
-    <property name="java.specification.version" value="1.8"/>
-    <property name="file.encoding" value="UTF-8"/>
-    <property name="user.name" value="Adrian"/>
-    <property name="java.class.path" value="/Users/Adrian/Downloads/apache-maven-3.8.2/boot/plexus-classworlds-2.6.0.jar"/>
-    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="java.class.path" value="/Users/adrian/git/BopBot/target/test-classes:/Users/adrian/git/BopBot/target/classes:/Users/adrian/.m2/repository/com/github/DV8FromTheWorld/JDA/legacy~v4-v3.7.1-g39ba0c2-692/JDA-legacy~v4-v3.7.1-g39ba0c2-692.jar:/Users/adrian/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/adrian/.m2/repository/org/jetbrains/annotations/16.0.1/annotations-16.0.1.jar:/Users/adrian/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/Users/adrian/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar:/Users/adrian/.m2/repository/com/squareup/okhttp3/okhttp/3.13.0/okhttp-3.13.0.jar:/Users/adrian/.m2/repository/com/squareup/okio/okio/1.17.2/okio-1.17.2.jar:/Users/adrian/.m2/repository/club/minnced/opus-java-api/1.1.0/opus-java-api-1.1.0.jar:/Users/adrian/.m2/repository/net/java/dev/jna/jna/4.4.0/jna-4.4.0.jar:/Users/adrian/.m2/repository/club/minnced/opus-java-natives/1.1.0/opus-java-natives-1.1.0.jar:/Users/adrian/.m2/repository/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar:/Users/adrian/.m2/repository/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar:/Users/adrian/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.1/jackson-databind-2.10.1.jar:/Users/adrian/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.1/jackson-annotations-2.10.1.jar:/Users/adrian/.m2/repository/com/sedmelluq/lavaplayer/1.3.78/lavaplayer-1.3.78.jar:/Users/adrian/.m2/repository/com/sedmelluq/lava-common/1.1.2/lava-common-1.1.2.jar:/Users/adrian/.m2/repository/org/apache/httpcomponents/httpclient/4.5.10/httpclient-4.5.10.jar:/Users/adrian/.m2/repository/org/apache/httpcomponents/httpcore/4.4.12/httpcore-4.4.12.jar:/Users/adrian/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/adrian/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/adrian/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.0/jackson-core-2.10.0.jar:/Users/adrian/.m2/repository/com/sedmelluq/lavaplayer-natives/1.3.14/lavaplayer-natives-1.3.14.jar:/Users/adrian/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/Users/adrian/.m2/repository/net/iharder/base64/2.3.9/base64-2.3.9.jar:/Users/adrian/.m2/repository/com/jagrosh/jda-utilities-command/3.0.5/jda-utilities-command-3.0.5.jar:/Users/adrian/.m2/repository/com/jagrosh/jda-utilities-commons/3.0.5/jda-utilities-commons-3.0.5.jar:/Users/adrian/.m2/repository/com/jagrosh/jda-utilities-doc/3.0.5/jda-utilities-doc-3.0.5.jar:/Users/adrian/.m2/repository/com/jagrosh/jda-utilities-examples/3.0.5/jda-utilities-examples-3.0.5.jar:/Users/adrian/.m2/repository/com/jagrosh/jda-utilities-menu/3.0.5/jda-utilities-menu-3.0.5.jar:/Users/adrian/.m2/repository/com/jagrosh/jda-utilities-oauth2/3.0.5/jda-utilities-oauth2-3.0.5.jar:/Users/adrian/.m2/repository/com/github/jagrosh/JLyrics/-01cf4ee007-1/JLyrics--01cf4ee007-1.jar:/Users/adrian/.m2/repository/org/json/json/20180813/json-20180813.jar:/Users/adrian/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/Users/adrian/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/Users/adrian/.m2/repository/com/typesafe/config/1.3.2/config-1.3.2.jar:/Users/adrian/.m2/repository/org/jsoup/jsoup/1.14.2/jsoup-1.14.2.jar:/Users/adrian/.m2/repository/junit/junit/4.13.1/junit-4.13.1.jar:/Users/adrian/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package"/>
-    <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="user.language" value="en"/>
-    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
-    <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_301"/>
-    <property name="java.ext.dirs" value="/Users/Adrian/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
-    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/classes"/>
-    <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="/Users/Adrian/Downloads/apache-maven-3.8.2"/>
-    <property name="file.separator" value="/"/>
-    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="20"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="AU"/>
+    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/20/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/adrian/git/BopBot/target/surefire/surefirebooter-20230415233316932_3.jar /Users/adrian/git/BopBot/target/surefire 2023-04-15T23-33-16_766-jvmRun1 surefire-20230415233316932_1tmp surefire_0-20230415233316932_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/adrian/git/BopBot/target/test-classes:/Users/adrian/git/BopBot/target/classes:/Users/adrian/.m2/repository/com/github/DV8FromTheWorld/JDA/legacy~v4-v3.7.1-g39ba0c2-692/JDA-legacy~v4-v3.7.1-g39ba0c2-692.jar:/Users/adrian/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/adrian/.m2/repository/org/jetbrains/annotations/16.0.1/annotations-16.0.1.jar:/Users/adrian/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/Users/adrian/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar:/Users/adrian/.m2/repository/com/squareup/okhttp3/okhttp/3.13.0/okhttp-3.13.0.jar:/Users/adrian/.m2/repository/com/squareup/okio/okio/1.17.2/okio-1.17.2.jar:/Users/adrian/.m2/repository/club/minnced/opus-java-api/1.1.0/opus-java-api-1.1.0.jar:/Users/adrian/.m2/repository/net/java/dev/jna/jna/4.4.0/jna-4.4.0.jar:/Users/adrian/.m2/repository/club/minnced/opus-java-natives/1.1.0/opus-java-natives-1.1.0.jar:/Users/adrian/.m2/repository/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar:/Users/adrian/.m2/repository/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar:/Users/adrian/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.1/jackson-databind-2.10.1.jar:/Users/adrian/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.1/jackson-annotations-2.10.1.jar:/Users/adrian/.m2/repository/com/sedmelluq/lavaplayer/1.3.78/lavaplayer-1.3.78.jar:/Users/adrian/.m2/repository/com/sedmelluq/lava-common/1.1.2/lava-common-1.1.2.jar:/Users/adrian/.m2/repository/org/apache/httpcomponents/httpclient/4.5.10/httpclient-4.5.10.jar:/Users/adrian/.m2/repository/org/apache/httpcomponents/httpcore/4.4.12/httpcore-4.4.12.jar:/Users/adrian/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/adrian/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/adrian/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.0/jackson-core-2.10.0.jar:/Users/adrian/.m2/repository/com/sedmelluq/lavaplayer-natives/1.3.14/lavaplayer-natives-1.3.14.jar:/Users/adrian/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/Users/adrian/.m2/repository/net/iharder/base64/2.3.9/base64-2.3.9.jar:/Users/adrian/.m2/repository/com/jagrosh/jda-utilities-command/3.0.5/jda-utilities-command-3.0.5.jar:/Users/adrian/.m2/repository/com/jagrosh/jda-utilities-commons/3.0.5/jda-utilities-commons-3.0.5.jar:/Users/adrian/.m2/repository/com/jagrosh/jda-utilities-doc/3.0.5/jda-utilities-doc-3.0.5.jar:/Users/adrian/.m2/repository/com/jagrosh/jda-utilities-examples/3.0.5/jda-utilities-examples-3.0.5.jar:/Users/adrian/.m2/repository/com/jagrosh/jda-utilities-menu/3.0.5/jda-utilities-menu-3.0.5.jar:/Users/adrian/.m2/repository/com/jagrosh/jda-utilities-oauth2/3.0.5/jda-utilities-oauth2-3.0.5.jar:/Users/adrian/.m2/repository/com/github/jagrosh/JLyrics/-01cf4ee007-1/JLyrics--01cf4ee007-1.jar:/Users/adrian/.m2/repository/org/json/json/20180813/json-20180813.jar:/Users/adrian/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/Users/adrian/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/Users/adrian/.m2/repository/com/typesafe/config/1.3.2/config-1.3.2.jar:/Users/adrian/.m2/repository/org/jsoup/jsoup/1.14.2/jsoup-1.14.2.jar:/Users/adrian/.m2/repository/junit/junit/4.13.1/junit-4.13.1.jar:/Users/adrian/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/adrian"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-03-21"/>
+    <property name="java.home" value="/usr/local/Cellar/openjdk/20/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/adrian/git/BopBot"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/adrian/git/BopBot/target/surefire/surefirebooter-20230415233316932_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="20"/>
+    <property name="user.name" value="adrian"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="12.6.1"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/adrian/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/1l/hps4hmf53fj94t_64cz1vsrw0000gn/T/"/>
+    <property name="java.version" value="20"/>
+    <property name="user.dir" value="/Users/adrian/git/BopBot"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/adrian/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="20"/>
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
-    <property name="sun.cpu.isalist" value=""/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="64.0"/>
   </properties>
-  <testcase classname="com.jagrosh.jmusicbot.FairQueueTest" name="sameIdentifierSize" time="0.014"/>
-  <testcase classname="com.jagrosh.jmusicbot.FairQueueTest" name="differentIdentifierSize" time="0.01"/>
+  <testcase name="sameIdentifierSize" classname="com.jagrosh.jmusicbot.FairQueueTest" time="0.009"/>
+  <testcase name="differentIdentifierSize" classname="com.jagrosh.jmusicbot.FairQueueTest" time="0.008"/>
 </testsuite>
